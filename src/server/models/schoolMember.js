@@ -9,7 +9,6 @@ mongoose.Promise = require('bluebird');
 
 var SchoolMemberSchema = new Schema({
   active: { type: Boolean, default: true },
-  admin: { type: Boolean, default: false },
   username: {
     type: String,
     required: true,
