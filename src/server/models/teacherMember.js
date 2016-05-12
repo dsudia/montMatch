@@ -73,6 +73,11 @@ var TeacherMemberSchema = new Schema({
         'Error, {PATH} must be unique values. Value: `{VALUE}`'
       ]
     },
+    trainingImportance: {
+      type: Number,
+      min: 0,
+      max: 3
+    },
     locTypes: {
       type: [{
         type: Number,
@@ -83,6 +88,11 @@ var TeacherMemberSchema = new Schema({
         validations.uniqueVals,
         'Error, {PATH} must be unique values. Value: `{VALUE}`'
       ]
+    },
+    locTypesImportance: {
+      type: Number,
+      min: 0,
+      max: 3
     },
     orgTypes: {
       type: [{
@@ -95,6 +105,11 @@ var TeacherMemberSchema = new Schema({
         'Error, {PATH} must be unique values. Value: `{VALUE}`'
       ]
     },
+    orgTypesImportance: {
+      type: Number,
+      min: 0,
+      max: 3
+    },
     sizes: {
       type: [{
         type: Number,
@@ -105,6 +120,11 @@ var TeacherMemberSchema = new Schema({
         validations.uniqueVals,
         'Error, {PATH} must be unique values. Value: `{VALUE}`'
       ]
+    },
+    sizesImportance: {
+      type: Number,
+      min: 0,
+      max: 3
     },
     cals: {
       type: [{
@@ -117,6 +137,11 @@ var TeacherMemberSchema = new Schema({
         'Error, {PATH} must be unique values. Value: `{VALUE}`'
       ]
     },
+    calsImportance: {
+      type: Number,
+      min: 0,
+      max: 3
+    },
     states: {
       type: [{
         type: Number,
@@ -127,6 +152,11 @@ var TeacherMemberSchema = new Schema({
         validations.uniqueVals,
         'Error, {PATH} must be unique values. Value: `{VALUE}`'
       ]
+    },
+    statesImportance: {
+      type: Number,
+      min: 0,
+      max: 3
     },
     traits: {
       type: [{
@@ -151,6 +181,10 @@ var TeacherMemberSchema = new Schema({
       ]
     }
   },
+  _schoolInterests: [{
+    type: ObjectId,
+    ref: 'montMatch.schoolMembers'
+  }],
   _schoolMatches: [{
     type: ObjectId,
     ref: 'montMatch.schoolMembers'
