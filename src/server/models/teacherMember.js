@@ -151,7 +151,11 @@ var TeacherMemberSchema = new Schema({
       ]
     }
   },
-  _matches: [{
+  _schoolMatches: [{
+    type: ObjectId,
+    ref: 'montMatch.schoolMembers'
+  }],
+  _teacherMatches: [{
     type: ObjectId,
     ref: 'montMatch.teacherMembers'
   }]
